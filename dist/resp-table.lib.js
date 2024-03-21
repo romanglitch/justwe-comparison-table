@@ -46,6 +46,9 @@
             const tableHeader = tableRootElement.querySelector(selectors.tableHeader)
             const tableHeaderCol = headerSwiperElement.querySelectorAll(selectors.tableCol)
 
+            let bodySwipersProcessed = 0
+            let bodySwipersArray = []
+
             const isOneColumn = (length) => length < 2 ? tableRootElement.classList.add('--one-column') : tableRootElement.classList.remove('--one-column')
 
             const setHeight = () => {
@@ -60,9 +63,6 @@
 
                 tableHeader.style.height = `${heightParams.highestHeightOfHeaderColumns}px`
             }
-
-            let bodySwipersProcessed = 0
-            let bodySwipersArray = []
 
             bodySwiperElements.forEach(bodySwiper => {
                 bodySwipersProcessed++
