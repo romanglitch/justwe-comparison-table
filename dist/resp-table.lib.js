@@ -24,7 +24,7 @@
             observeParents: true,
             observeSlideChildren: true,
             breakpoints: {
-                '@0.65': {
+                320: {
                     slidesPerView: 1,
                     spaceBetween: 10,
                 },
