@@ -1,6 +1,6 @@
-#Responsive comparison table [DEMO](https://romanglitch.gitlab.io/repsonsive-table "DEMO")
+# Responsive comparison table [DEMO](https://romanglitch.gitlab.io/repsonsive-table "DEMO")
 
-##Usage:
+## Usage:
 
 ```html
 <!DOCTYPE html>
