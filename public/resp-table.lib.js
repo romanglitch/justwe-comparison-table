@@ -24,8 +24,8 @@
             observeParents: true,
             observeSlideChildren: true,
             breakpoints: {
-                '@0.75': {
-                    slidesPerView: 2,
+                '@0.65': {
+                    slidesPerView: 1,
                     spaceBetween: 10,
                 },
                 '@1.00': {
@@ -46,28 +46,19 @@
             const tableHeader = tableRootElement.querySelector(selectors.tableHeader)
             const tableHeaderCol = headerSwiperElement.querySelectorAll(selectors.tableCol)
 
+            const isOneColumn = (length) => length < 2 ? tableRootElement.classList.add('--one-column') : tableRootElement.classList.remove('--one-column')
+
             const setHeight = () => {
                 let heightParams = {
                     tableHeight: tableRootElement.getBoundingClientRect().height,
                     highestHeightOfHeaderColumns: Math.max(...Array.from(tableHeaderCol).map(column => column.getBoundingClientRect().height))
                 }
 
-                headerSwiperElement.style.height = `${heightParams.tableHeight}px`
+                if (window.innerWidth < 768) {
+                    headerSwiperElement.style.height = `${heightParams.tableHeight}px`
+                }
+
                 tableHeader.style.height = `${heightParams.highestHeightOfHeaderColumns}px`
-            }
-
-            const setStickyTrigger = () => {
-                const stickyElement = tableHeader
-
-                const observer = new IntersectionObserver(
-                    ([e]) => e.target.classList.toggle('--css-sticky', e.intersectionRatio < 1),
-                    {
-                        threshold: [1],
-                        rootMargin: '-1px 0px 0px 0px',
-                    }
-                );
-
-                observer.observe(stickyElement)
             }
 
             let bodySwipersProcessed = 0
@@ -84,9 +75,7 @@
                             bodySwipersArray.push(swiperInstance)
                             setHeight()
                         },
-                        observerUpdate: () => {
-                            setHeight()
-                        }
+                        observerUpdate: () => setHeight()
                     }
                 })
 
@@ -98,17 +87,14 @@
                             control: bodySwipersArray
                         },
                         navigation: {
-                            nextEl: selectors.swiper.headerSwiperNavNext,
-                            prevEl: selectors.swiper.headerSwiperNavPrev,
+                            nextEl: tableRootElement.querySelector(selectors.swiper.headerSwiperNavNext),
+                            prevEl: tableRootElement.querySelector(selectors.swiper.headerSwiperNavPrev),
                         },
                         on: {
-                            init: () => {
-                                setHeight()
-                                setStickyTrigger()
-                            },
-                            observerUpdate: () => {
-                                setHeight()
-                            }
+                            init: () => setHeight(),
+                            observerUpdate: () => setHeight(),
+                            resize: () => setHeight(),
+                            slidesLengthChange: swiperInstance => isOneColumn(swiperInstance.slides.length),
                         }
                     })
                 }

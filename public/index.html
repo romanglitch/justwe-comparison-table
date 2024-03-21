@@ -12,23 +12,12 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
     <link rel="stylesheet" href="style.css">
 
-    <title>[Responsive table]</title>
+    <title>[Responsive table - DEMO]</title>
 </head>
 <body>
     <div class="container" style="height: 200vh; padding-top: 5vh">
 
-        <button onclick="{
-            let div = this;
-            let nextSibling = div.nextSibling;
-            while(nextSibling && nextSibling.nodeType !== 1) {
-                nextSibling = nextSibling.nextSibling
-            }
-
-            nextSibling.style.display = ''
-
-            this.remove()
-        }">Show hidden table</button>
-        <div style="display: none; margin-bottom: 100px">
+        <div style="margin-bottom: 50px">
             <!-- Table start -->
             <div class="resp-table">
                 <!-- Table header -->
@@ -56,11 +45,10 @@
                                 2.0 л. 7AMT (244 л.с.) FWD
                             </div>
                         </div>
-
-                        <!-- Table header navigation -->
-                        <div class="swiper-button-prev resp-table__prev"></div>
-                        <div class="swiper-button-next resp-table__next"></div>
                     </div>
+                    <!-- Table header navigation -->
+                    <div class="swiper-button-prev resp-table__prev"></div>
+                    <div class="swiper-button-next resp-table__next"></div>
                 </div>
 
                 <!-- Table body -->
@@ -889,45 +877,104 @@
             <!-- Table end -->
         </div>
 
-
-
         <!-- Table start -->
-        <div class="resp-table" style="outline: 1px solid; margin-bottom: 5vh">
-
+        <div class="resp-table" style="margin-bottom: 50px">
             <!-- Table header -->
             <div class="resp-table__header">
                 <div class="swiper resp-table__header-swiper">
                     <div class="swiper-wrapper resp-table__wrapper">
                         <!-- Table header columns -->
-                        <div class="swiper-slide resp-table__col">head col</div>
-                        <div class="swiper-slide resp-table__col">head col</div>
-                        <div class="swiper-slide resp-table__col">head col</div>
+                        <div class="swiper-slide resp-table__col">
+                            1.6 л 5МКПП (90 л.с.) FWD
+                        </div>
+                        <div class="swiper-slide resp-table__col">
+                            2.0 л. 7AMT (244 л.с.) FWD
+                            <br>1 800 000 руб.
+                        </div>
                     </div>
-
-                    <!-- Table header navigation -->
-                    <div class="swiper-button-prev resp-table__prev"></div>
-                    <div class="swiper-button-next resp-table__next"></div>
                 </div>
+                <!-- Table header navigation -->
+                <div class="swiper-button-prev resp-table__prev"></div>
+                <div class="swiper-button-next resp-table__next"></div>
             </div>
 
             <!-- Table body -->
             <div class="resp-table__body">
-
                 <!-- Table body row -->
                 <div class="resp-table__row">
                     <!-- Table body row heading -->
                     <div class="resp-table__row-heading">
-                        Заголовок 1
+                        Двигатель
                     </div>
 
                     <!-- Table body row content -->
                     <div class="resp-table__row-content">
+                        <div class="resp-table__row-content-heading">
+                            Объем двигателя, л
+                        </div>
                         <div class="swiper resp-table__body-swiper">
                             <div class="swiper-wrapper resp-table__wrapper">
                                 <!-- Table body row columns -->
-                                <div class="swiper-slide resp-table__col">body col</div>
-                                <div class="swiper-slide resp-table__col">body col</div>
-                                <div class="swiper-slide resp-table__col">body col</div>
+                                <div class="swiper-slide resp-table__col">
+                                    4858
+                                </div>
+                                <div class="swiper-slide resp-table__col">
+                                    4858
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Table body row content -->
+                    <div class="resp-table__row-content">
+                        <div class="resp-table__row-content-heading">
+                            Объем двигателя, л
+                        </div>
+                        <div class="swiper resp-table__body-swiper">
+                            <div class="swiper-wrapper resp-table__wrapper">
+                                <!-- Table body row columns -->
+                                <div class="swiper-slide resp-table__col">
+                                    4858
+                                </div>
+                                <div class="swiper-slide resp-table__col">
+                                    4858
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Table body row content -->
+                    <div class="resp-table__row-content">
+                        <div class="resp-table__row-content-heading">
+                            Объем двигателя, л
+                        </div>
+                        <div class="swiper resp-table__body-swiper">
+                            <div class="swiper-wrapper resp-table__wrapper">
+                                <!-- Table body row columns -->
+                                <div class="swiper-slide resp-table__col">
+                                    4858
+                                </div>
+                                <div class="swiper-slide resp-table__col">
+                                    4858
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Table body row content -->
+                    <div class="resp-table__row-content">
+                        <div class="resp-table__row-content-heading">
+                            Объем двигателя, л
+                        </div>
+                        <div class="swiper resp-table__body-swiper">
+                            <div class="swiper-wrapper resp-table__wrapper">
+                                <!-- Table body row columns -->
+                                <div class="swiper-slide resp-table__col">
+                                    4858
+                                </div>
+                                <div class="swiper-slide resp-table__col">
+                                    4858
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -937,17 +984,77 @@
                 <div class="resp-table__row">
                     <!-- Table body row heading -->
                     <div class="resp-table__row-heading">
-                        Общие характеристики
+                        Двигатель
                     </div>
 
                     <!-- Table body row content -->
                     <div class="resp-table__row-content">
+                        <div class="resp-table__row-content-heading">
+                            Объем двигателя, л
+                        </div>
                         <div class="swiper resp-table__body-swiper">
                             <div class="swiper-wrapper resp-table__wrapper">
                                 <!-- Table body row columns -->
-                                <div class="swiper-slide resp-table__col">body col</div>
-                                <div class="swiper-slide resp-table__col">body col</div>
-                                <div class="swiper-slide resp-table__col">body col</div>
+                                <div class="swiper-slide resp-table__col">
+                                    4858
+                                </div>
+                                <div class="swiper-slide resp-table__col">
+                                    4858
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Table body row content -->
+                    <div class="resp-table__row-content">
+                        <div class="resp-table__row-content-heading">
+                            Объем двигателя, л
+                        </div>
+                        <div class="swiper resp-table__body-swiper">
+                            <div class="swiper-wrapper resp-table__wrapper">
+                                <!-- Table body row columns -->
+                                <div class="swiper-slide resp-table__col">
+                                    4858
+                                </div>
+                                <div class="swiper-slide resp-table__col">
+                                    4858
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Table body row content -->
+                    <div class="resp-table__row-content">
+                        <div class="resp-table__row-content-heading">
+                            Объем двигателя, л
+                        </div>
+                        <div class="swiper resp-table__body-swiper">
+                            <div class="swiper-wrapper resp-table__wrapper">
+                                <!-- Table body row columns -->
+                                <div class="swiper-slide resp-table__col">
+                                    4858
+                                </div>
+                                <div class="swiper-slide resp-table__col">
+                                    4858
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Table body row content -->
+                    <div class="resp-table__row-content">
+                        <div class="resp-table__row-content-heading">
+                            Объем двигателя, л
+                        </div>
+                        <div class="swiper resp-table__body-swiper">
+                            <div class="swiper-wrapper resp-table__wrapper">
+                                <!-- Table body row columns -->
+                                <div class="swiper-slide resp-table__col">
+                                    4858
+                                </div>
+                                <div class="swiper-slide resp-table__col">
+                                    4858
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -957,137 +1064,77 @@
                 <div class="resp-table__row">
                     <!-- Table body row heading -->
                     <div class="resp-table__row-heading">
-                        Общие характеристики
+                        Двигатель
                     </div>
 
                     <!-- Table body row content -->
                     <div class="resp-table__row-content">
+                        <div class="resp-table__row-content-heading">
+                            Объем двигателя, л
+                        </div>
                         <div class="swiper resp-table__body-swiper">
                             <div class="swiper-wrapper resp-table__wrapper">
                                 <!-- Table body row columns -->
-                                <div class="swiper-slide resp-table__col">body col</div>
-                                <div class="swiper-slide resp-table__col">body col</div>
-                                <div class="swiper-slide resp-table__col">body col</div>
+                                <div class="swiper-slide resp-table__col">
+                                    4858
+                                </div>
+                                <div class="swiper-slide resp-table__col">
+                                    4858
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <!-- Table body row -->
-                <div class="resp-table__row">
-                    <!-- Table body row heading -->
-                    <div class="resp-table__row-heading">
-                        Общие характеристики
-                    </div>
 
                     <!-- Table body row content -->
                     <div class="resp-table__row-content">
+                        <div class="resp-table__row-content-heading">
+                            Объем двигателя, л
+                        </div>
                         <div class="swiper resp-table__body-swiper">
                             <div class="swiper-wrapper resp-table__wrapper">
                                 <!-- Table body row columns -->
-                                <div class="swiper-slide resp-table__col">body col</div>
-                                <div class="swiper-slide resp-table__col">body col</div>
-                                <div class="swiper-slide resp-table__col">body col</div>
+                                <div class="swiper-slide resp-table__col">
+                                    4858
+                                </div>
+                                <div class="swiper-slide resp-table__col">
+                                    4858
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <!-- Table body row -->
-                <div class="resp-table__row">
-                    <!-- Table body row heading -->
-                    <div class="resp-table__row-heading">
-                        Общие характеристики
-                    </div>
 
                     <!-- Table body row content -->
                     <div class="resp-table__row-content">
+                        <div class="resp-table__row-content-heading">
+                            Объем двигателя, л
+                        </div>
                         <div class="swiper resp-table__body-swiper">
                             <div class="swiper-wrapper resp-table__wrapper">
                                 <!-- Table body row columns -->
-                                <div class="swiper-slide resp-table__col">body col</div>
-                                <div class="swiper-slide resp-table__col">body col</div>
-                                <div class="swiper-slide resp-table__col">body col</div>
+                                <div class="swiper-slide resp-table__col">
+                                    4858
+                                </div>
+                                <div class="swiper-slide resp-table__col">
+                                    4858
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <!-- Table body row -->
-                <div class="resp-table__row">
-                    <!-- Table body row heading -->
-                    <div class="resp-table__row-heading">
-                        Общие характеристики
-                    </div>
 
                     <!-- Table body row content -->
                     <div class="resp-table__row-content">
-                        <div class="swiper resp-table__body-swiper">
-                            <div class="swiper-wrapper resp-table__wrapper">
-                                <!-- Table body row columns -->
-                                <div class="swiper-slide resp-table__col">body col</div>
-                                <div class="swiper-slide resp-table__col">body col</div>
-                                <div class="swiper-slide resp-table__col">body col</div>
-                            </div>
+                        <div class="resp-table__row-content-heading">
+                            Объем двигателя, л
                         </div>
-                    </div>
-                </div>
-
-                <!-- Table body row -->
-                <div class="resp-table__row">
-                    <!-- Table body row heading -->
-                    <div class="resp-table__row-heading">
-                        Общие характеристики
-                    </div>
-
-                    <!-- Table body row content -->
-                    <div class="resp-table__row-content">
                         <div class="swiper resp-table__body-swiper">
                             <div class="swiper-wrapper resp-table__wrapper">
                                 <!-- Table body row columns -->
-                                <div class="swiper-slide resp-table__col">body col</div>
-                                <div class="swiper-slide resp-table__col">body col</div>
-                                <div class="swiper-slide resp-table__col">body col</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Table body row -->
-                <div class="resp-table__row">
-                    <!-- Table body row heading -->
-                    <div class="resp-table__row-heading">
-                        Общие характеристики
-                    </div>
-
-                    <!-- Table body row content -->
-                    <div class="resp-table__row-content">
-                        <div class="swiper resp-table__body-swiper">
-                            <div class="swiper-wrapper resp-table__wrapper">
-                                <!-- Table body row columns -->
-                                <div class="swiper-slide resp-table__col">body col</div>
-                                <div class="swiper-slide resp-table__col">body col</div>
-                                <div class="swiper-slide resp-table__col">body col</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Table body row -->
-                <div class="resp-table__row">
-                    <!-- Table body row heading -->
-                    <div class="resp-table__row-heading">
-                        Общие характеристики
-                    </div>
-
-                    <!-- Table body row content -->
-                    <div class="resp-table__row-content">
-                        <div class="swiper resp-table__body-swiper">
-                            <div class="swiper-wrapper resp-table__wrapper">
-                                <!-- Table body row columns -->
-                                <div class="swiper-slide resp-table__col">body col</div>
-                                <div class="swiper-slide resp-table__col">body col</div>
-                                <div class="swiper-slide resp-table__col">body col</div>
+                                <div class="swiper-slide resp-table__col">
+                                    4858
+                                </div>
+                                <div class="swiper-slide resp-table__col">
+                                    4858
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1097,38 +1144,87 @@
         <!-- Table end -->
 
         <!-- Table start -->
-        <div class="resp-table" style="outline: 1px solid; margin-bottom: 5vh">
-
+        <div class="resp-table" style="margin-bottom: 50px">
             <!-- Table header -->
             <div class="resp-table__header">
                 <div class="swiper resp-table__header-swiper">
                     <div class="swiper-wrapper resp-table__wrapper">
                         <!-- Table header columns -->
-                        <div class="swiper-slide resp-table__col">head col</div>
+                        <div class="swiper-slide resp-table__col">
+                            1.6 л 5МКПП (90 л.с.) FWD
+                        </div>
                     </div>
-
-                    <!-- Table header navigation -->
-                    <div class="swiper-button-prev resp-table__prev"></div>
-                    <div class="swiper-button-next resp-table__next"></div>
                 </div>
+                <!-- Table header navigation -->
+                <div class="swiper-button-prev resp-table__prev"></div>
+                <div class="swiper-button-next resp-table__next"></div>
             </div>
 
             <!-- Table body -->
             <div class="resp-table__body">
-
                 <!-- Table body row -->
                 <div class="resp-table__row">
                     <!-- Table body row heading -->
                     <div class="resp-table__row-heading">
-                        Заголовок 1
+                        Двигатель
                     </div>
 
                     <!-- Table body row content -->
                     <div class="resp-table__row-content">
+                        <div class="resp-table__row-content-heading">
+                            Объем двигателя, л
+                        </div>
                         <div class="swiper resp-table__body-swiper">
                             <div class="swiper-wrapper resp-table__wrapper">
                                 <!-- Table body row columns -->
-                                <div class="swiper-slide resp-table__col">body col</div>
+                                <div class="swiper-slide resp-table__col">
+                                    4858
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Table body row content -->
+                    <div class="resp-table__row-content">
+                        <div class="resp-table__row-content-heading">
+                            Объем двигателя, л
+                        </div>
+                        <div class="swiper resp-table__body-swiper">
+                            <div class="swiper-wrapper resp-table__wrapper">
+                                <!-- Table body row columns -->
+                                <div class="swiper-slide resp-table__col">
+                                    4858
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Table body row content -->
+                    <div class="resp-table__row-content">
+                        <div class="resp-table__row-content-heading">
+                            Объем двигателя, л
+                        </div>
+                        <div class="swiper resp-table__body-swiper">
+                            <div class="swiper-wrapper resp-table__wrapper">
+                                <!-- Table body row columns -->
+                                <div class="swiper-slide resp-table__col">
+                                    4858
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Table body row content -->
+                    <div class="resp-table__row-content">
+                        <div class="resp-table__row-content-heading">
+                            Объем двигателя, л
+                        </div>
+                        <div class="swiper resp-table__body-swiper">
+                            <div class="swiper-wrapper resp-table__wrapper">
+                                <!-- Table body row columns -->
+                                <div class="swiper-slide resp-table__col">
+                                    4858
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1138,15 +1234,65 @@
                 <div class="resp-table__row">
                     <!-- Table body row heading -->
                     <div class="resp-table__row-heading">
-                        Заголовок 1
+                        Двигатель
                     </div>
 
                     <!-- Table body row content -->
                     <div class="resp-table__row-content">
+                        <div class="resp-table__row-content-heading">
+                            Объем двигателя, л
+                        </div>
                         <div class="swiper resp-table__body-swiper">
                             <div class="swiper-wrapper resp-table__wrapper">
                                 <!-- Table body row columns -->
-                                <div class="swiper-slide resp-table__col">body col</div>
+                                <div class="swiper-slide resp-table__col">
+                                    4858
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Table body row content -->
+                    <div class="resp-table__row-content">
+                        <div class="resp-table__row-content-heading">
+                            Объем двигателя, л
+                        </div>
+                        <div class="swiper resp-table__body-swiper">
+                            <div class="swiper-wrapper resp-table__wrapper">
+                                <!-- Table body row columns -->
+                                <div class="swiper-slide resp-table__col">
+                                    4858
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Table body row content -->
+                    <div class="resp-table__row-content">
+                        <div class="resp-table__row-content-heading">
+                            Объем двигателя, л
+                        </div>
+                        <div class="swiper resp-table__body-swiper">
+                            <div class="swiper-wrapper resp-table__wrapper">
+                                <!-- Table body row columns -->
+                                <div class="swiper-slide resp-table__col">
+                                    4858
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Table body row content -->
+                    <div class="resp-table__row-content">
+                        <div class="resp-table__row-content-heading">
+                            Объем двигателя, л
+                        </div>
+                        <div class="swiper resp-table__body-swiper">
+                            <div class="swiper-wrapper resp-table__wrapper">
+                                <!-- Table body row columns -->
+                                <div class="swiper-slide resp-table__col">
+                                    4858
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1156,15 +1302,65 @@
                 <div class="resp-table__row">
                     <!-- Table body row heading -->
                     <div class="resp-table__row-heading">
-                        Заголовок 1
+                        Двигатель
                     </div>
 
                     <!-- Table body row content -->
                     <div class="resp-table__row-content">
+                        <div class="resp-table__row-content-heading">
+                            Объем двигателя, л
+                        </div>
                         <div class="swiper resp-table__body-swiper">
                             <div class="swiper-wrapper resp-table__wrapper">
                                 <!-- Table body row columns -->
-                                <div class="swiper-slide resp-table__col">body col</div>
+                                <div class="swiper-slide resp-table__col">
+                                    4858
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Table body row content -->
+                    <div class="resp-table__row-content">
+                        <div class="resp-table__row-content-heading">
+                            Объем двигателя, л
+                        </div>
+                        <div class="swiper resp-table__body-swiper">
+                            <div class="swiper-wrapper resp-table__wrapper">
+                                <!-- Table body row columns -->
+                                <div class="swiper-slide resp-table__col">
+                                    4858
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Table body row content -->
+                    <div class="resp-table__row-content">
+                        <div class="resp-table__row-content-heading">
+                            Объем двигателя, л
+                        </div>
+                        <div class="swiper resp-table__body-swiper">
+                            <div class="swiper-wrapper resp-table__wrapper">
+                                <!-- Table body row columns -->
+                                <div class="swiper-slide resp-table__col">
+                                    4858
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Table body row content -->
+                    <div class="resp-table__row-content">
+                        <div class="resp-table__row-content-heading">
+                            Объем двигателя, л
+                        </div>
+                        <div class="swiper resp-table__body-swiper">
+                            <div class="swiper-wrapper resp-table__wrapper">
+                                <!-- Table body row columns -->
+                                <div class="swiper-slide resp-table__col">
+                                    4858
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1174,15 +1370,65 @@
                 <div class="resp-table__row">
                     <!-- Table body row heading -->
                     <div class="resp-table__row-heading">
-                        Заголовок 1
+                        Двигатель
                     </div>
 
                     <!-- Table body row content -->
                     <div class="resp-table__row-content">
+                        <div class="resp-table__row-content-heading">
+                            Объем двигателя, л
+                        </div>
                         <div class="swiper resp-table__body-swiper">
                             <div class="swiper-wrapper resp-table__wrapper">
                                 <!-- Table body row columns -->
-                                <div class="swiper-slide resp-table__col">body col</div>
+                                <div class="swiper-slide resp-table__col">
+                                    4858
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Table body row content -->
+                    <div class="resp-table__row-content">
+                        <div class="resp-table__row-content-heading">
+                            Объем двигателя, л
+                        </div>
+                        <div class="swiper resp-table__body-swiper">
+                            <div class="swiper-wrapper resp-table__wrapper">
+                                <!-- Table body row columns -->
+                                <div class="swiper-slide resp-table__col">
+                                    4858
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Table body row content -->
+                    <div class="resp-table__row-content">
+                        <div class="resp-table__row-content-heading">
+                            Объем двигателя, л
+                        </div>
+                        <div class="swiper resp-table__body-swiper">
+                            <div class="swiper-wrapper resp-table__wrapper">
+                                <!-- Table body row columns -->
+                                <div class="swiper-slide resp-table__col">
+                                    4858
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Table body row content -->
+                    <div class="resp-table__row-content">
+                        <div class="resp-table__row-content-heading">
+                            Объем двигателя, л
+                        </div>
+                        <div class="swiper resp-table__body-swiper">
+                            <div class="swiper-wrapper resp-table__wrapper">
+                                <!-- Table body row columns -->
+                                <div class="swiper-slide resp-table__col">
+                                    4858
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1190,10 +1436,9 @@
             </div>
         </div>
         <!-- Table end -->
-
     </div>
 
     <script src="inc/swiper-bundle.min.js"></script>
-    <script src="resp-table.js"></script>
+    <script src="resp-table.lib.js"></script>
 </body>
 </html>
