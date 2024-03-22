@@ -6,6 +6,11 @@
     padding: 10px;
     border-radius: 4px;
     cursor: pointer;
+    display: grid;
+}
+
+.resp-table > * {
+    min-width: 0;
 }
 
 .resp-table__header {
