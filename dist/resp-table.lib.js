@@ -15,14 +15,13 @@
             }
         }
 
-        const elements = {
-            root: document.querySelectorAll(selectors.tableRoot)
-        }
+        const tableRoot = document.querySelectorAll(selectors.tableRoot)
 
         const swiperParams = {
             observer: true,
             observeParents: true,
             observeSlideChildren: true,
+            touchEventsTarget: 'container',
             breakpoints: {
                 320: {
                     slidesPerView: 1,
@@ -39,66 +38,53 @@
             }
         }
 
-        elements.root.forEach(tableRootElement => {
-            const headerSwiperElement = tableRootElement.querySelector(selectors.swiper.headerSwiper)
-            const bodySwiperElements = tableRootElement.querySelectorAll(selectors.swiper.bodySwiper)
-
-            const tableHeader = tableRootElement.querySelector(selectors.tableHeader)
-            const tableHeaderCol = headerSwiperElement.querySelectorAll(selectors.tableCol)
-
-            let bodySwipersProcessed = 0
+        tableRoot.forEach(tableRootElement => {
             let bodySwipersArray = []
 
             const isOneColumn = (length) => length < 2 ? tableRootElement.classList.add('--one-column') : tableRootElement.classList.remove('--one-column')
-
             const setHeight = () => {
                 let heightParams = {
                     tableHeight: tableRootElement.getBoundingClientRect().height,
-                    highestHeightOfHeaderColumns: Math.max(...Array.from(tableHeaderCol).map(column => column.getBoundingClientRect().height))
+                    highestHeightOfHeaderColumns: Math.max(...Array.from(tableRootElement.querySelector(selectors.swiper.headerSwiper).querySelectorAll(selectors.tableCol)).map(column => column.getBoundingClientRect().height))
                 }
 
-                if (window.innerWidth < 768) {
-                    headerSwiperElement.style.height = `${heightParams.tableHeight}px`
+                // Swipe anywhere on mobile
+                if (window.innerWidth < 992) {
+                    tableRootElement.querySelector(selectors.swiper.headerSwiper).style.height = `${heightParams.tableHeight}px`
                 }
 
-                tableHeader.style.height = `${heightParams.highestHeightOfHeaderColumns}px`
+                tableRootElement.querySelector(selectors.tableHeader).style.height = `${heightParams.highestHeightOfHeaderColumns}px`
             }
 
-            bodySwiperElements.forEach(bodySwiper => {
-                bodySwipersProcessed++
+            const headerSwiperInst = new Swiper(tableRootElement.querySelector(selectors.swiper.headerSwiper), {
+                ...swiperParams,
+                navigation: {
+                    nextEl: tableRootElement.querySelector(selectors.swiper.headerSwiperNavNext),
+                    prevEl: tableRootElement.querySelector(selectors.swiper.headerSwiperNavPrev),
+                },
+                on: {
+                    init: () => setHeight(),
+                    observerUpdate: () => setHeight(),
+                    resize: () => setHeight(),
+                    slidesLengthChange: swiperInstance => isOneColumn(swiperInstance.slides.length),
+                }
+            });
 
-                new Swiper(bodySwiper, {
+            tableRootElement.querySelectorAll(selectors.swiper.bodySwiper).forEach((bodySwiper) => {
+                let bodySwiperInst = new Swiper(bodySwiper, {
                     ...swiperParams,
-                    allowTouchMove: false,
                     on: {
-                        init: swiperInstance => {
-                            bodySwipersArray.push(swiperInstance)
-                            setHeight()
-                        },
+                        init: () => setHeight(),
                         observerUpdate: () => setHeight()
                     }
-                })
+                });
 
-                if(bodySwipersProcessed === bodySwiperElements.length) {
-                    new Swiper(headerSwiperElement, {
-                        ...swiperParams,
-                        touchEventsTarget: 'container',
-                        controller: {
-                            control: bodySwipersArray
-                        },
-                        navigation: {
-                            nextEl: tableRootElement.querySelector(selectors.swiper.headerSwiperNavNext),
-                            prevEl: tableRootElement.querySelector(selectors.swiper.headerSwiperNavPrev),
-                        },
-                        on: {
-                            init: () => setHeight(),
-                            observerUpdate: () => setHeight(),
-                            resize: () => setHeight(),
-                            slidesLengthChange: swiperInstance => isOneColumn(swiperInstance.slides.length),
-                        }
-                    })
-                }
-            })
+                bodySwipersArray.push(bodySwiperInst);
+
+                bodySwiperInst.controller.control = headerSwiperInst;
+            });
+
+            headerSwiperInst.controller.control = bodySwipersArray;
         })
     } else {
         console.info('Resp table has stopped, the Swiper library is missing.')
