@@ -16,7 +16,7 @@
 
 .resp-table__header {
     position: sticky;
-    top: 10px;
+    top: var(--desktop-sticky, 10px);
     background: #fff;
     -webkit-box-shadow: 0 4px 11px rgb(0 0 0 / 9%);
     box-shadow: 0 4px 11px rgb(0 0 0 / 9%);
@@ -165,7 +165,11 @@
     padding-left: calc(15% + 20px);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
+    .resp-table__header {
+        top: var(--mobile-sticky, 10px);
+    }
+
     .resp-table__header .resp-table__prev:after, .resp-table__header .resp-table__next:after {
         font-size: 10px;
     }

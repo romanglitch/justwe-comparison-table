@@ -15,7 +15,7 @@
 <body>
 
 <!-- Table start -->
-<div class="resp-table">
+<div class="resp-table" style="--desktop-sticky: 10px; --mobile-sticky: 50px;">
     <!-- Table header -->
     <div class="resp-table__header">
         <div class="swiper resp-table__header-swiper">
