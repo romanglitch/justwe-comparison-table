@@ -1,4 +1,4 @@
-# Responsive comparison table [DEMO](https://romanglitch.gitlab.io/repsonsive-table "DEMO")
+# Responsive comparison table [DEMO](https://repsonsive-table-romanglitch-d0c39d5d9f65486ce6849501953047c1c0.gitlab.io/ "DEMO")
 
 ## Usage:
 
